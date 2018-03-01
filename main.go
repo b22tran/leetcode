@@ -26,6 +26,7 @@ func main() {
 			},
 		},
 	}
+	//fmt.Printf("Answer: %v %v",l1.Val, l2.Next.Next.Next)
 	ans := q1_10.AddTwoNumbers(l1,l2)
 	fmt.Printf("Answer: %v",ans)
 }
