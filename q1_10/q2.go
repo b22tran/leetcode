@@ -20,26 +20,23 @@ type ListNode struct {
 }
 
 func AddTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
-	var slice1, slice2 []int
-	var n1, n2 int
+	slice1 := JoinNumsFromListNode(l1, l1)
+	slice2 := JoinNumsFromListNode(l2, l2)
+	fmt.Printf("slice: %v %v\n", slice1, slice2)
 
-	current := l1
-	slice1 = joinNumsFromListNode(l1, current)
-
-	current = l2
-	slice2 = joinNumsFromListNode(l2, current)
-
-	n1 = formatToNumber(slice1) // converting the int array into int to retrieve sum
-	n2 = formatToNumber(slice2)
+	n1 := FormatToNumber(slice1) // converting the int array into int to retrieve sum
+	n2 := FormatToNumber(slice2)
 	n1 += n2
+	fmt.Printf("numbers: %v %v\n", n1,n2)
+
 
 	str := strconv.Itoa(n1)
 	strAry := strings.Split(str, "")
-	return createListNode(strAry)
+	return CreateListNodeReversed(strAry)
 }
 
-func joinNumsFromListNode(l1 *ListNode, current *ListNode) (slice []int){
-	for l1.Next != nil { // implement channels here
+func JoinNumsFromListNode(l1 *ListNode, current *ListNode) (slice []int){
+	for l1 != nil { // implement channels here
 		slice = append(slice, current.Val)
 		if current.Next == nil {
 			break
@@ -49,14 +46,14 @@ func joinNumsFromListNode(l1 *ListNode, current *ListNode) (slice []int){
 	return slice
 }
 
-func formatToNumber(nums []int) (num int) {
+func FormatToNumber(nums []int) (num int) {
 	for i, v := range nums {
 		num += v * int(math.Pow(10, float64(len(nums)-1-i)))
 	}
 	return num
 }
 
-func createListNode(strAry []string) *ListNode {
+func CreateListNodeReversed(strAry []string) *ListNode {
 	length := len(strAry) - 1
 	if length == -1 {
 		return nil
@@ -65,6 +62,6 @@ func createListNode(strAry []string) *ListNode {
 	fmt.Printf("create list node: %v %v\n", length, num)
 	return &ListNode{
 		Val:  num,
-		Next: createListNode(strAry[0:length]),
+		Next: CreateListNodeReversed(strAry[0:length]),
 	}
 }
