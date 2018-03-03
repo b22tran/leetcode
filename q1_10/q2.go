@@ -6,6 +6,20 @@ import (
 	"strings"
 	"fmt"
 )
+// another approach is to add each node in tandem from l1, l2 & implement carry over
+
+
+/**
+	//main.go
+	l1 := q1_10.CreateListNodeReversed([]string{"2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","9"})
+	l2 := q1_10.CreateListNodeReversed([]string{"5","6","4","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","9","9","9","9"})
+
+	//l1 := q1_10.CreateListNodeReversed([]string{"8","1"})
+	//l2 := q1_10.CreateListNodeReversed([]string{"0"})
+
+	ans := q1_10.AddTwoNumbers(l1,l2)
+	fmt.Printf("Answer: %v",ans)
+ */
 
 /**
  * Definition for singly-linked list.
