@@ -1,7 +1,7 @@
 package q1_10
 
 import (
-	"math"
+	"math/big"
 	"strconv"
 	"strings"
 	"fmt"
@@ -26,18 +26,18 @@ func AddTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 
 	n1 := FormatToNumber(slice1) // converting the int array into int to retrieve sum
 	n2 := FormatToNumber(slice2)
-	n1 += n2
+	n1.Add(&n1,&n2)
 	fmt.Printf("numbers: %v %v\n", n1,n2)
 
 
-	str := strconv.Itoa(n1)
+	str := n1.String()
 	strAry := strings.Split(str, "")
 	return CreateListNodeReversed(strAry)
 }
 
-func JoinNumsFromListNode(l1 *ListNode, current *ListNode) (slice []int){
+func JoinNumsFromListNode(l1 *ListNode, current *ListNode) (slice []int64){
 	for l1 != nil { // implement channels here
-		slice = append(slice, current.Val)
+		slice = append(slice, int64(current.Val))
 		if current.Next == nil {
 			break
 		}
@@ -46,9 +46,12 @@ func JoinNumsFromListNode(l1 *ListNode, current *ListNode) (slice []int){
 	return slice
 }
 
-func FormatToNumber(nums []int) (num int) {
+func FormatToNumber(nums []int64) big.Int {
+	var num, sig big.Int
 	for i, v := range nums {
-		num += v * int(math.Pow(10, float64(len(nums)-1-i)))
+		val := big.NewInt(v)
+		sig.Exp(big.NewInt(10 ),big.NewInt(int64(i)),nil)
+		num.Add(&num, sig.Mul(val, &sig))
 	}
 	return num
 }
