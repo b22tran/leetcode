@@ -6,7 +6,10 @@ import (
 	"strings"
 	"fmt"
 )
-/** Another approach is to add each node in tandem from l1, l2 & implement carry over
+/**
+// https://leetcode.com/problems/add-two-numbers/description/
+
+Another approach is to add each node in tandem from l1, l2 & implement carry over
 	Reason why this approach is slow
 	- unnecessary usage of large integers thus resorting to math/big Int
 	- using exp func on big numbers

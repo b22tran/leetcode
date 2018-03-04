@@ -4,10 +4,12 @@ import (
 	"log"
 )
 
-// main.go
-//nums := []int{2,5,5,11}
-//twoSum := twoSum(nums, 10)
-//	fmt.Printf("%v", twoSum)
+/** https://leetcode.com/problems/two-sum/description/
+//main.go
+ nums := []int{2,5,5,11}
+ twoSum := twoSum(nums, 10)
+ fmt.Printf("%v", twoSum)
+*/
 
 // initially did brute force, adapted their sol'n secondly
 func twoSum(nums []int, target int) []int {

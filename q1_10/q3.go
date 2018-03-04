@@ -1,6 +1,10 @@
 package q1_10
 
-
+/** https://leetcode.com/problems/longest-substring-without-repeating-characters/solution/
+	// main.go
+	ans := q1_10.LengthOfLongestSubstring("c")
+	fmt.Printf("Answer: %v",ans)
+ */
 func LengthOfLongestSubstring(s string) int {
 	longest := 0
 	if len(s) > 0 {
