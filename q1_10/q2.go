@@ -6,10 +6,11 @@ import (
 	"strings"
 	"fmt"
 )
-// another approach is to add each node in tandem from l1, l2 & implement carry over
+/** Another approach is to add each node in tandem from l1, l2 & implement carry over
+	Reason why this approach is slow
+	- unnecessary usage of large integers thus resorting to math/big Int
+	- using exp func on big numbers
 
-
-/**
 	//main.go
 	l1 := q1_10.CreateListNodeReversed([]string{"2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","9"})
 	l2 := q1_10.CreateListNodeReversed([]string{"5","6","4","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","2","4","3","9","9","9","9"})

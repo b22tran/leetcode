@@ -1,4 +1,5 @@
 # leetcode
 
-https://leetcode.com/
+Personal practice with questions on https://leetcode.com/
 
+Coded in Golang.
