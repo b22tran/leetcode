@@ -17,7 +17,7 @@ func LongestPalindrome(s string) string {
 		currPalindrome := ""
 		j := stringLength
 		for j>i{
-			if len(s[i:j]) < longestLength{
+			if len(s[i:j]) <= longestLength{
 				break // doesn't check string that are shorter than current longest
 			}
 			//fmt.Printf("s[i:j]: %v j: %v \n",s[i:j],j)
