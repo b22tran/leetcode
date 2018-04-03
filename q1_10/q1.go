@@ -11,7 +11,7 @@ import (
  fmt.Printf("%v", twoSum)
 */
 
-// initially did brute force, adapted their sol'n secondly
+// initially did a hybrid brute force, adapted their sol'n secondly
 func twoSum(nums []int, target int) []int {
 	nMap := make(map[int]int)
 	for i, v := range nums {
