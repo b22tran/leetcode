@@ -1,9 +1,5 @@
 package q1_10
 
-import (
-"fmt"
-)
-
 /** https://leetcode.com/problems/longest-palindromic-substring/description/
 //main.go
 	ans := q1_10.LongestPalindrome("civilwartestingwhetherthatnaptionoranynartionsoconceivedandsodedicatedcanlongendureWeareqmetonagreatbattlefiemldoftzhatwarWehavecometodedicpateaportionofthatfieldasafinalrestingplaceforthosewhoheregavetheirlivesthatthatnationmightliveItisaltogetherfangandproperthatweshoulddothisButinalargersensewecannotdedicatewecannotconsecratewecannothallowthisgroundThebravelmenlivinganddeadwhostruggledherehaveconsecrateditfaraboveourpoorponwertoaddordetractTgheworldadswfilllittlenotlenorlongrememberwhatwesayherebutitcanneverforgetwhattheydidhereItisforusthelivingrathertobededicatedheretotheulnfinishedworkwhichtheywhofoughtherehavethusfarsonoblyadvancedItisratherforustobeherededicatedtothegreattdafskremainingbeforeusthatfromthesehonoreddeadwetakeincreaseddevotiontothatcauseforwhichtheygavethelastpfullmeasureofdevotionthatweherehighlyresolvethatthesedeadshallnothavediedinvainthatthisnationunsderGodshallhaveanewbirthoffreedomandthatgovernmentofthepeoplebythepeopleforthepeopleshallnotperishfromtheearth")
@@ -21,16 +17,19 @@ func LongestPalindrome(s string) string {
 		currPalindrome := ""
 		j := stringLength
 		for j>i{
+			if len(s[i:j]) < longestLength{
+				break // doesn't check string that are shorter than current longest
+			}
 			//fmt.Printf("s[i:j]: %v j: %v \n",s[i:j],j)
 			currPalindromeLen, currPalindrome= checkPalindrome(s[i:j])
-			j-- // widen the window
+			j-- // reduce the window
 			if currPalindromeLen > longestLength{
 				longestLength = currPalindromeLen
 				longestPalindrome = currPalindrome
 			}
 		}
 	}
-	fmt.Printf(longestPalindrome)
+	// fmt.Printf(longestPalindrome)
 	return longestPalindrome
 }
 
