@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	ans := q1_10.Convert("PAYPALISHIRING",3)
+	ans := q1_10.Reverse(-123)
 	fmt.Printf("Answer: %v\n",ans)
 }
