@@ -17,7 +17,7 @@ func twoSum(nums []int, target int) []int {
 	for i, v := range nums {
 		complement := target - nums[i]
 		val, ok := nMap[complement]
-		if (ok) {
+		if ok {
 			return []int{val, i}
 		}
 		nMap[v] = i

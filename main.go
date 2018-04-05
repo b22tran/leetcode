@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	ans := q1_10.MyAtoi("2147483648")
+	ans := q1_10.IsPalindrome(-2147447412)
 	fmt.Printf("Answer: %v\n",ans)
 }
