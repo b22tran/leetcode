@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	ans := q1_10.Reverse(-123)
+	ans := q1_10.MyAtoi("-12344das")
 	fmt.Printf("Answer: %v\n",ans)
 }
