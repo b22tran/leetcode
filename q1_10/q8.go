@@ -8,7 +8,7 @@ import (
 
 /** https://leetcode.com/problems/string-to-integer-atoi/description/
 //main.go
-
+	ans := q1_10.MyAtoi("2147483648")
 	fmt.Printf("Answer: %v\n",ans)
 
 // requirements
@@ -32,7 +32,6 @@ func MyAtoi(str string) int {
 		return 0
 	}
 	if str[0] == '+' {
-		signed = 1
 		str = str[1:]
 	}else if str[0] == '-'{
 		signed = -1
