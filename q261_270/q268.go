@@ -1,12 +1,10 @@
 package q261_270
 
 /** https://leetcode.com/problems/missing-number/description/
-//main.go
-	ans := q1_10.IsPalindrome(-12132121)
-	fmt.Printf("Answer: %v\n",ans)
-
 // possible approaches
-	1.
+	1. merge sort than find missing num
+	2. hashmap of (all nums, bool), the key with false value is missing
+	3. add all nums then subtract the difference
 */
 
 func MissingNumber(nums []int) int {
